@@ -12,6 +12,7 @@ android {
         consumerProguardFiles "consumer-rules.pro"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         buildConfigField "String", "SDK_VERSION", "\"${rootProject.version}\""
+        buildConfigField "String", "ONESIGNAL_BASE_URL", "\"${project.findProperty('ONESIGNAL_BASE_URL') ?: 'https://onesignal.com/api/v1/'}\""
     }
 
     buildFeatures {
