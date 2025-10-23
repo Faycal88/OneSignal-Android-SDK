@@ -47,3 +47,9 @@ dependencies {
 }
 
 apply from: 'maven-push.gradle'
+
+
+// Disable all Maven signing tasks for local publishing
+gradle.afterProject { p ->
+  p.tasks.matching { it.name == "signMavenPublication" }.configureEach { it.enabled = false }
+}
